@@ -91,7 +91,7 @@ export class AuthService
         return { accessToken };
     }
 
-    public me(accountId: number)
+    public me(accountId: string)
     {
         return this.accountModel.findById(accountId).select({ _id: 1, email: 1, createdAt: 1, updatedAt: 1 });
     }

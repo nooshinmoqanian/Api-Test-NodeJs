@@ -46,7 +46,7 @@ export class AuthController
     @Get('me')
     @ApiSecurity('JsonWebToken')
     @UseGuards(AuthGuard)
-    public me(@AccountDecorator() accountId: number)
+    public me(@AccountDecorator() accountId: string)
     {
         return this.authService.me(accountId);
     }
