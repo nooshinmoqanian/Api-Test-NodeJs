@@ -15,9 +15,9 @@ export class TasksService
 
     public async create(createTaskDto: CreateTaskDto)
     {
-        const { title, description } = createTaskDto;
+        const { title, description, done } = createTaskDto;
 
-        await this.taskModel.create({ title, description });
+        await this.taskModel.create({ title, description, done });
 
         return { message: 'Task created successfully' };
     }
@@ -53,12 +53,12 @@ export class TasksService
 
     public async update(id: string, updateTaskDto: UpdateTaskDto)
     {
-        const { title, description } = updateTaskDto;
+        const { title, description, done } = updateTaskDto;
 
         if (!ObjectId.isValid(id))
             return { message: 'Invalid Object Id' };
 
-        const task = await this.taskModel.updateOne({ _id: id }, { title, description });
+        const task = await this.taskModel.updateOne({ _id: id }, { title, description, done });
         if (!task)
             return { message: 'Task Not Found' };
 

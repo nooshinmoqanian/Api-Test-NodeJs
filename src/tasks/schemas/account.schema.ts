@@ -11,6 +11,9 @@ export class Task
 
     @Prop({ type: String })
     description: string;
+
+    @Prop({ type: Boolean })
+    done: boolean;
 }
 
 export const TaskSchema = SchemaFactory.createForClass(Task);

@@ -10,4 +10,7 @@ export class CreateTaskDto
     @ApiProperty()
     @Length(1, 1500)
     description: string;
+
+    @ApiProperty()
+    done: boolean;
 }

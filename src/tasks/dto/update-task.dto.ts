@@ -12,4 +12,8 @@ export class UpdateTaskDto
     @Length(1, 1500)
     @IsOptional()
     description: string;
+
+    @ApiProperty()
+    @IsOptional()
+    done: boolean;
 }
